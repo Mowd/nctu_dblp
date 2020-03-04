@@ -1,0 +1,783 @@
+{
+    "Algorithms & Theory": [
+        {
+            "full": "ACM Symposium on Theory of Computing", 
+            "level": "A", 
+            "short": "STOC"
+        }, 
+        {
+            "full": "IEEE Symposium on Foundations of Computer Science", 
+            "level": "A", 
+            "short": "FOCS"
+        }, 
+        {
+            "full": "Symposium on Discrete Algorithms", 
+            "level": "A", 
+            "short": "SODA"
+        }, 
+        {
+            "full": "Logic in Computer Science", 
+            "level": "A", 
+            "short": "LICS"
+        }, 
+        {
+            "full": "IEEE Conference on Computational Complexity", 
+            "level": "A", 
+            "short": "CCC"
+        }, 
+        {
+            "full": "ACM Symposium on Computational Geometry", 
+            "level": "A", 
+            "short": "SOCG"
+        }, 
+        {
+            "full": "Computational Learning Theory", 
+            "level": "B", 
+            "short": "COLT"
+        }, 
+        {
+            "full": "International Conference on Concurrency Theory", 
+            "level": "B", 
+            "short": "CONCUR"
+        }, 
+        {
+            "full": "European Symposium on Algorithm", 
+            "level": "B", 
+            "short": "ESA"
+        }, 
+        {
+            "full": "Symposium on Theoretical Aspects of Computer Science", 
+            "level": "B", 
+            "short": "STACS"
+        }, 
+        {
+            "full": "International Congress of Mathematicans", 
+            "level": "B", 
+            "short": "ICALP"
+        }, 
+        {
+            "full": "International Computing and Combinatorics Conference", 
+            "level": "B", 
+            "short": "COCOON"
+        }, 
+        {
+            "full": "IEEE International Symposium on Information Theory", 
+            "level": "B", 
+            "short": ""
+        }
+    ], 
+    "Artificial Intelligence": [
+        {
+            "full": "National Conference on Artificial Intelligence", 
+            "level": "A", 
+            "short": "AAAI"
+        }, 
+        {
+            "full": "International Joint Conference on Artificial Intelligence", 
+            "level": "A", 
+            "short": "IJCAI"
+        }, 
+        {
+            "full": "International Conference on Machine Learning", 
+            "level": "A", 
+            "short": "ICML"
+        }, 
+        {
+            "full": "Principles of Knowledge Representation and Reasoning", 
+            "level": "B", 
+            "short": "KR"
+        }, 
+        {
+            "full": "Uncertainty in Artificial Intelligence", 
+            "level": "B", 
+            "short": "UAI"
+        }, 
+        {
+            "full": "Machine Intelligence", 
+            "level": "B", 
+            "short": ""
+        }, 
+        {
+            "full": "International Conference on Robotics and Automation", 
+            "level": "B", 
+            "short": "ICRA"
+        }, 
+        {
+            "full": "International Conference on Multiagent Systems", 
+            "level": "B", 
+            "short": "ICMAS"
+        }, 
+        {
+            "full": "Autonomous Agents & Multiagent systems", 
+            "level": "B", 
+            "short": "AAMAS"
+        }, 
+        {
+            "full": "ACM SIGEVO Genetic and Evolutionary Computation Conference (GECCO)", 
+            "level": "B", 
+            "short": ""
+        }, 
+        {
+            "full": "IEEE Congress on Evolutionary Computation(CEC)", 
+            "level": "B", 
+            "short": ""
+        }, 
+        {
+            "full": "IEEE/RSJ International Conference on Intelligent Robots and Systems", 
+            "level": "B", 
+            "short": "IROS"
+        }
+    ], 
+    "Computer Architecture and Code Generation": [
+        {
+            "full": "International Symposium on Computer Architecture", 
+            "level": "A", 
+            "short": "ISCA"
+        }, 
+        {
+            "full": "International Symposium on Microarchitecture", 
+            "level": "A", 
+            "short": "MICRO"
+        }, 
+        {
+            "full": "Architectural Support for Programming Languages and Operating Systems", 
+            "level": "A", 
+            "short": "ASPLOS"
+        }, 
+        {
+            "full": "International Symposium on High", 
+            "level": "A", 
+            "short": "HPCA"
+        }, 
+        {
+            "full": "International Conference on Parallel Architectures and Compilation Techniques", 
+            "level": "B", 
+            "short": "PACT"
+        }, 
+        {
+            "full": "Symposium on Code Generation and Optimization", 
+            "level": "B", 
+            "short": "CGO"
+        }, 
+        {
+            "full": "Languages and Compilers for Parallel Computing", 
+            "level": "B", 
+            "short": "LCPC"
+        }
+    ], 
+    "Computer Education": [
+        {
+            "full": "Intelligent Tutoring Systems", 
+            "level": "A", 
+            "short": "ITS"
+        }, 
+        {
+            "full": "Computer Support for Collaborative Learning", 
+            "level": "B", 
+            "short": "CSCL"
+        }, 
+        {
+            "full": "Artificial Intelligence in Education", 
+            "level": "B", 
+            "short": "AIED"
+        }
+    ], 
+    "Computer Vision and Graphics": [
+        {
+            "full": "International Conference on Computer Vision", 
+            "level": "A", 
+            "short": "ICCV"
+        }, 
+        {
+            "full": "Computer Vision and Pattern Recognition", 
+            "level": "A", 
+            "short": "CVPR"
+        }, 
+        {
+            "full": "Annual Conference on Computer Graphics", 
+            "level": "A", 
+            "short": "SIGGRAPH"
+        }, 
+        {
+            "full": "IEEE Visualization", 
+            "level": "A", 
+            "short": ""
+        }, 
+        {
+            "full": "ACM Symposium on interactive 3D Graphics and Games", 
+            "level": "A", 
+            "short": "I3D"
+        }, 
+        {
+            "full": "SIGGRAPH Asia", 
+            "level": "A", 
+            "short": ""
+        }, 
+        {
+            "full": "ACM/Eurographics Symposium on Computer Animation (SCA)", 
+            "level": "B", 
+            "short": ""
+        }, 
+        {
+            "full": "Eurographics Symposium on Rendering", 
+            "level": "B", 
+            "short": "EGSR"
+        }, 
+        {
+            "full": "IEEE Information Visualization Conference", 
+            "level": "B", 
+            "short": "INFOVIS"
+        }, 
+        {
+            "full": "Graphics Interface", 
+            "level": "B", 
+            "short": "GI"
+        }, 
+        {
+            "full": "IEEE International Conference on Automatic Face and Gesture Recognition", 
+            "level": "B", 
+            "short": "FGR"
+        }
+    ], 
+    "Databases, Data Mining, Information Retrieval": [
+        {
+            "full": "Knowledge Discovery and Data Mining", 
+            "level": "A", 
+            "short": "KDD"
+        }, 
+        {
+            "full": "International Conference on Data Engineering", 
+            "level": "A", 
+            "short": "ICDE"
+        }, 
+        {
+            "full": "Very Large Data Bases", 
+            "level": "A", 
+            "short": "VLDB"
+        }, 
+        {
+            "full": "Symposium on Principles of Database Systems", 
+            "level": "A", 
+            "short": "PODS"
+        }, 
+        {
+            "full": "International Conference on Management of Data", 
+            "level": "A", 
+            "short": "SIGMOD"
+        }, 
+        {
+            "full": "Research and Development in Information Retrieval", 
+            "level": "A", 
+            "short": "SIGIR"
+        }, 
+        {
+            "full": "World Wide Web Conference", 
+            "level": "A", 
+            "short": "WWW"
+        }, 
+        {
+            "full": "USENIX Symposium on Internet Technologies and Systems", 
+            "level": "A", 
+            "short": "USITS"
+        }, 
+        {
+            "full": "International Conference on Information and Knowledge Management", 
+            "level": "B", 
+            "short": "CIKM"
+        }, 
+        {
+            "full": "IEEE International Conference on Data Mining", 
+            "level": "B", 
+            "short": "ICDM"
+        }, 
+        {
+            "full": "International Conference on Database Theory", 
+            "level": "B", 
+            "short": "ICDT"
+        }, 
+        {
+            "full": "Extending Database Technology", 
+            "level": "B", 
+            "short": "EDBT"
+        }, 
+        {
+            "full": "Text REtrieval Conference", 
+            "level": "B", 
+            "short": "TREC"
+        }, 
+        {
+            "full": "ACM International Conference on Web Search and Data Mining", 
+            "level": "B", 
+            "short": "WSDM"
+        }
+    ], 
+    "Distributed & Parallel Computing": [
+        {
+            "full": "Symposium on Principles of Distributed Computing", 
+            "level": "A", 
+            "short": "PODC"
+        }, 
+        {
+            "full": "International Conference on Distributed Computing Systems", 
+            "level": "A", 
+            "short": "ICDCS"
+        }, 
+        {
+            "full": "Principles and Practice of Parallel Programming", 
+            "level": "A", 
+            "short": "PPoPP"
+        }, 
+        {
+            "full": "Symposium on Fault", 
+            "level": "B", 
+            "short": "FTCS"
+        }, 
+        {
+            "full": "ACM Symposium on Parallel Algorithms and Architectures", 
+            "level": "B", 
+            "short": "SPAA"
+        }, 
+        {
+            "full": "International Conference on Supercomputing", 
+            "level": "B", 
+            "short": "ICS"
+        }, 
+        {
+            "full": "Supercomputing Conference", 
+            "level": "B", 
+            "short": "SC"
+        }, 
+        {
+            "full": "IEEE International Symposium on High Performance Distributed Computing", 
+            "level": "B", 
+            "short": "HPDC"
+        }, 
+        {
+            "full": "ICPP", 
+            "level": "B", 
+            "short": ""
+        }
+    ], 
+    "Hardware, VLSI and CAD": [
+        {
+            "full": "International Solid State Circuits Conference", 
+            "level": "A", 
+            "short": "ISSCC"
+        }, 
+        {
+            "full": "Design Automation Conference", 
+            "level": "A", 
+            "short": "DAC"
+        }, 
+        {
+            "full": "International Conference on Computer Aided Design", 
+            "level": "A", 
+            "short": "ICCAD"
+        }, 
+        {
+            "full": "International Symposium on Physical Design", 
+            "level": "B", 
+            "short": "ISPD"
+        }, 
+        {
+            "full": "VLSI Test Symposium", 
+            "level": "B", 
+            "short": "VTS"
+        }, 
+        {
+            "full": "International Symposium on Low Power Electronics and Design", 
+            "level": "B", 
+            "short": "ISLPED"
+        }, 
+        {
+            "full": "Design, Automation and Test in Europe Conference", 
+            "level": "B", 
+            "short": "DATE"
+        }, 
+        {
+            "full": "IEEE Custom Integrated Circuits Conference", 
+            "level": "B", 
+            "short": "CICC"
+        }
+    ], 
+    "Human-Computer Interaction": [
+        {
+            "full": "Computer Human Interaction", 
+            "level": "A", 
+            "short": "CHI"
+        }, 
+        {
+            "full": "Conference on Computer Supported Cooperative Work", 
+            "level": "A", 
+            "short": "CSCW"
+        }, 
+        {
+            "full": "User Interface Software and Technology", 
+            "level": "A", 
+            "short": "UIST"
+        }, 
+        {
+            "full": "European Conference on Computer Supported Cooperative Work", 
+            "level": "B", 
+            "short": "ECSCW"
+        }, 
+        {
+            "full": "Ubiquitous Computing/Handheld and Ubiquitous Computing", 
+            "level": "B", 
+            "short": "UbiComp(HUC)"
+        }, 
+        {
+            "full": "International Symposium on Wearable Computers", 
+            "level": "B", 
+            "short": "ISWC"
+        }, 
+        {
+            "full": "International Conference on Human", 
+            "level": "B", 
+            "short": "MobileHCI"
+        }
+    ], 
+    "Machine Learning & Pattern Recognition": [
+        {
+            "full": "Neural Information Processing Systems", 
+            "level": "A", 
+            "short": "NIPS"
+        }, 
+        {
+            "full": "International Conference on Machine Learning", 
+            "level": "A", 
+            "short": "ICML"
+        }, 
+        {
+            "full": "Uncertainty in Artificial Intelligence", 
+            "level": "A", 
+            "short": "UAI"
+        }, 
+        {
+            "full": "Computational Learning Theory", 
+            "level": "B", 
+            "short": "COLT"
+        }, 
+        {
+            "full": "The European Conference on Machine Learning", 
+            "level": "B", 
+            "short": "ECML"
+        }, 
+        {
+            "full": "International Conference on Pattern Recognition", 
+            "level": "B", 
+            "short": "ICPR"
+        }, 
+        {
+            "full": "Asian Conference on Machine Learning", 
+            "level": "B", 
+            "short": "ACML"
+        }
+    ], 
+    "Multimedia": [
+        {
+            "full": "ACM Multimedia Conference", 
+            "level": "A", 
+            "short": "MM"
+        }, 
+        {
+            "full": "Data Compression Conference", 
+            "level": "A", 
+            "short": "DCC"
+        }, 
+        {
+            "full": "International Conference on Image Processing", 
+            "level": "B", 
+            "short": "ICIP"
+        }, 
+        {
+            "full": "Storage and Retrieval for Image and Video Databases", 
+            "level": "B", 
+            "short": ""
+        }, 
+        {
+            "full": "IEEE International Conference on Multimedia & Expo (ICME)", 
+            "level": "B", 
+            "short": ""
+        }, 
+        {
+            "full": "IEEE Conference on Visual Communications and Image Processing", 
+            "level": "B", 
+            "short": "VCIP"
+        }
+    ], 
+    "Natural Language & Speech": [
+        {
+            "full": "Meeting of the Association for Computational Linguistics", 
+            "level": "A", 
+            "short": "ACL"
+        }, 
+        {
+            "full": "Neural Information Processing Systems", 
+            "level": "A", 
+            "short": "NIPS"
+        }, 
+        {
+            "full": "International Conference on Acoustics, Speech, and Signal Processing", 
+            "level": "B", 
+            "short": "ICASSP"
+        }
+    ], 
+    "Networks & Communications": [
+        {
+            "full": "Mobile Computing and Networking", 
+            "level": "A", 
+            "short": "MOBICOM"
+        }, 
+        {
+            "full": "ACM SIGCOMM Conference", 
+            "level": "A", 
+            "short": "SIGCOMM"
+        }, 
+        {
+            "full": "IEEE INFOCOM", 
+            "level": "A", 
+            "short": "INFOCOM"
+        }, 
+        {
+            "full": "Mobile Ad Hoc Networking and Computing", 
+            "level": "A", 
+            "short": "MobiHoc"
+        }, 
+        {
+            "full": "Measurement and Modeling of Computer Systems", 
+            "level": "A", 
+            "short": "SIGMETRICS"
+        }, 
+        {
+            "full": "Conference On Embedded Networked Sensor Systems", 
+            "level": "B", 
+            "short": "SenSys"
+        }, 
+        {
+            "full": "Peer", 
+            "level": "B", 
+            "short": "IPTPS"
+        }, 
+        {
+            "full": "International Conference on Network Protocols", 
+            "level": "B", 
+            "short": "ICNP"
+        }, 
+        {
+            "full": "IEEE Wireless Communications & Networking Conference", 
+            "level": "B", 
+            "short": "WCNC"
+        }, 
+        {
+            "full": "MobiSys", 
+            "level": "B", 
+            "short": ""
+        }, 
+        {
+            "full": "IEEE International Conference on Communications", 
+            "level": "B", 
+            "short": "ICC"
+        }, 
+        {
+            "full": "IEEE Global Communications Conference (GLOBECOM)", 
+            "level": "B", 
+            "short": ""
+        }
+    ], 
+    "Operating Systems and Embedded Systems": [
+        {
+            "full": "Operating Systems Design and Implementation", 
+            "level": "A", 
+            "short": "OSDI"
+        }, 
+        {
+            "full": "Symposium on Operating Systems Principles", 
+            "level": "A", 
+            "short": "SOSP"
+        }, 
+        {
+            "full": "USENIX Technical Conference", 
+            "level": "A", 
+            "short": "USENIX"
+        }, 
+        {
+            "full": "IEEE Real", 
+            "level": "A", 
+            "short": "RTSS"
+        }, 
+        {
+            "full": "Workshop on Workstation Operating Systems", 
+            "level": "B", 
+            "short": "HotOS(WWOS)"
+        }, 
+        {
+            "full": "Hybrid Systems", 
+            "level": "B", 
+            "short": ""
+        }, 
+        {
+            "full": "USENIX Conference on File and Storage Technologies", 
+            "level": "B", 
+            "short": ""
+        }, 
+        {
+            "full": "International Workshop on Embedded Systems", 
+            "level": "B", 
+            "short": "EMSOFT"
+        }, 
+        {
+            "full": "Compilers, Architecture, and Synthesis for Embedded Systems", 
+            "level": "B", 
+            "short": "CASES"
+        }, 
+        {
+            "full": "IEEE Real Time Technology and Applications Symposium", 
+            "level": "B", 
+            "short": "RTAS"
+        }
+    ], 
+    "Optics & Photonics": [
+        {
+            "full": "Optical Fiber Communication conference", 
+            "level": "B", 
+            "short": "OFC"
+        }
+    ], 
+    "Programming Languages": [
+        {
+            "full": "Symposium on Principles of Programming Languages", 
+            "level": "A", 
+            "short": "POPL"
+        }, 
+        {
+            "full": "European Conference on Object", 
+            "level": "A", 
+            "short": "ECOOP"
+        }, 
+        {
+            "full": "SIGPLAN Conference on Programming Language Design and Implementation", 
+            "level": "A", 
+            "short": "PLDI"
+        }, 
+        {
+            "full": "ICLP/JICSLP) International Conference on Logic programming", 
+            "level": "A", 
+            "short": ""
+        }, 
+        {
+            "full": "Functional Programming Languages and Computer Architecture", 
+            "level": "B", 
+            "short": "FPCA"
+        }, 
+        {
+            "full": "ACM Conference on LISP and Functional Programming", 
+            "level": "B", 
+            "short": "LFP"
+        }, 
+        {
+            "full": "Aspect", 
+            "level": "B", 
+            "short": "AOSD"
+        }, 
+        {
+            "full": "Conference on Object", 
+            "level": "B", 
+            "short": "OOPSLA"
+        }, 
+        {
+            "full": "European Symposium on Programming", 
+            "level": "B", 
+            "short": "ESOP"
+        }
+    ], 
+    "Security & Privacy": [
+        {
+            "full": "International Crytology Conference", 
+            "level": "A", 
+            "short": "CRYPTO"
+        }, 
+        {
+            "full": "IEEE Symposium on Security and Privacy", 
+            "level": "A", 
+            "short": "S&P"
+        }, 
+        {
+            "full": "Computer and Communications Security", 
+            "level": "A", 
+            "short": "CCS"
+        }, 
+        {
+            "full": "Theory and Application of Cryptographic Techniques", 
+            "level": "A", 
+            "short": "EUROCRYPT"
+        }, 
+        {
+            "full": "USENIX Security Symposium", 
+            "level": "A", 
+            "short": ""
+        }, 
+        {
+            "full": "Dependable Systems and Networks", 
+            "level": "A", 
+            "short": "DSN"
+        }, 
+        {
+            "full": "Network and Distributed System Security Symposium", 
+            "level": "B", 
+            "short": "NDSS"
+        }, 
+        {
+            "full": "Computer Security Foundations Workshop", 
+            "level": "B", 
+            "short": "CSFW"
+        }, 
+        {
+            "full": "ASIACRYPT", 
+            "level": "B", 
+            "short": "ASIACRYPT"
+        }, 
+        {
+            "full": "Cryptographic Hardware and Embedded Systems", 
+            "level": "B", 
+            "short": "CHES"
+        }, 
+        {
+            "full": "Fast Software Encryption", 
+            "level": "B", 
+            "short": "FSE"
+        }, 
+        {
+            "full": "ASIACCS: ACM Symposium on Information, Computer and Communication Security", 
+            "level": "B", 
+            "short": ""
+        }
+    ], 
+    "Software Engineering": [
+        {
+            "full": "Computer Aided Verification", 
+            "level": "A", 
+            "short": "CAV"
+        }, 
+        {
+            "full": "International Conference on Software Engineering", 
+            "level": "A", 
+            "short": "ICSE"
+        }, 
+        {
+            "full": "International Conference on Software Maintenance", 
+            "level": "B", 
+            "short": "ICSM"
+        }, 
+        {
+            "full": "Tools and Algorithms for Construction and Analysis of Systems", 
+            "level": "B", 
+            "short": "TACAS"
+        }, 
+        {
+            "full": "Automated Software Engineering", 
+            "level": "B", 
+            "short": "ASE"
+        }
+    ]
+}
