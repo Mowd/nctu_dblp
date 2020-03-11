@@ -1,0 +1,35 @@
+body {
+    font-family: Microsoft JhengHei !important;
+    font-size: 160%;
+}
+.row{
+    margin-top: 70px;
+}
+th, td {
+    border-top: 0px !important;
+}
+.table {
+    border-bottom: 1px solid #ccc;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.clearfix {
+    clear: both;
+}
+sup {
+    font-size: 14px;
+}
+.loading {
+    padding: 8px;
+    border-radius: 10px;
+    position: absolute;
+    left: 100px;
+    top: 350px;
+    z-index: 9999;
+    background: white;
+    opacity: 0.9;
+}
