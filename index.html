@@ -73,14 +73,70 @@
     </nav>
 
     <div class="container">
-      <footer>
-          <p align="center"><a href="https://mowd.nctu.me/nctu_dblp/" target="_blank">NCTU dblp</a></p>
-      </footer>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </div>
+      </div>
+      <div class="row" style="margin-top: 10px;">
+        <div class="col-md-3">
+          <h3>Conference</h3>
+          <hr />
+          <input type="text" class="form-control" style="margin-bottom: 10px;" placeholder="Search...">
+          <div class="conference-block"></div>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-3">
+          <h3>Professor</h3>
+          <hr />
+          <input type="text" class="form-control" style="margin-bottom: 10px;" placeholder="Search...">
+          <div class="professor-block"></div>
+          <div class="year-block">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Year</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="row" style="margin-top: 10px;">
+                    <div class="col-xs-5">
+                      <div class="form-group">
+                        <select class="form-control">
+                          <option>2010</option>
+                          <option>2011</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-xs-2">to</div>
+                    <div class="col-xs-5">
+                      <div class="form-group">
+                        <select class="form-control">
+                          <option>2010</option>
+                          <option>2011</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <footer>
+            <p align="center"><a href="https://mowd.nctu.me/nctu_dblp/" target="_blank">NCTU dblp</a></p>
+        </footer>
+      </div>
     </div>
   </body>
+  <script src="js/main.js"></script>
   <script>
     $(function() {
-      //
+      se.Filter.setCallback();
     })
   </script>
 </html>
