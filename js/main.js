@@ -34,6 +34,11 @@ se.Search = {
             var keyword = $(".search-keyword").val();
             se.Search.search(keyword);
         });
+        $(".search-keyword").on("keypress", function(e) {
+            if(e.keyCode == 13) {
+                $(".btn-search").click();
+            }
+        });
     },
     search: function(keyword) {
         $(".loading").show();
@@ -57,8 +62,8 @@ se.Search = {
                 }
                 output.push(
                     res[i]["info"]["year"] + "<br />",
-                    author_li.join(", ") + "<br />",
-                    res[i]["info"]["title"] + " " + res[i]["info"]["venue"] + " " + res[i]["info"]["pages"],
+                    '<span style="color: #999;">' + author_li.join(", ") + "</span><br />",
+                    '<b>' + res[i]["info"]["title"] + "</b> " + res[i]["info"]["venue"] + " " + res[i]["info"]["pages"],
                     '<a href="' + res[i]["info"]["url"] + '" target="_blank">[VIEW]</a>',
                     "<hr>"
                 );
