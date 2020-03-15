@@ -76,9 +76,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
+            <input type="text" class="form-control search-keyword" placeholder="Search for...">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
+              <button class="btn btn-default btn-search" type="button">Search</button>
             </span>
           </div><!-- /input-group -->
         </div>
@@ -87,14 +87,18 @@
         <div class="col-md-3">
           <h3>Conference</h3>
           <hr />
-          <input type="text" class="form-control" style="margin-bottom: 10px;" placeholder="Search...">
+          <input type="text" class="form-control filter-search" style="margin-bottom: 10px;" placeholder="Search..." target=".conference-block">
           <div class="conference-block"></div>
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <h3>Result</h3>
+          <hr />
+          <div class="search-result"></div>
+        </div>
         <div class="col-md-3">
           <h3>Professor</h3>
           <hr />
-          <input type="text" class="form-control" style="margin-bottom: 10px;" placeholder="Search...">
+          <input type="text" class="form-control filter-search" style="margin-bottom: 10px;" placeholder="Search..." target=".professor-block">
           <div class="professor-block"></div>
           <div class="year-block">
             <div class="panel panel-default">
@@ -136,6 +140,7 @@
   <script src="js/main.js"></script>
   <script>
     $(function() {
+      se.Search.setCallback();
       se.Filter.setCallback();
     })
   </script>
