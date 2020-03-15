@@ -36,6 +36,7 @@ se.Search = {
         });
     },
     search: function(keyword) {
+        $(".loading").show();
         var professor_list = se.Filter.Professor.getSelected();
         var conference_list = se.Filter.Conference.getSelected();
         if(professor_list.length > 0) {
@@ -51,7 +52,6 @@ se.Search = {
             res = res.result.hits.hit;
             for(var i in res) {
                 var author_li = [];
-                console.log(res[i]);
                 for(var j in res[i]["info"]["authors"]["author"]) {
                     author_li.push(res[i]["info"]["authors"]["author"][j]["text"]);
                 }
@@ -64,6 +64,7 @@ se.Search = {
                 );
             }
             $(".search-result").html(output.join("\n"));
+            $(".loading").hide();
         });
     },
 };

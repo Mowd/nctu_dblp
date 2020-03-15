@@ -30,6 +30,6 @@ sup {
     left: 100px;
     top: 350px;
     z-index: 9999;
-    background: white;
+    background: #ccc;
     opacity: 0.9;
 }
