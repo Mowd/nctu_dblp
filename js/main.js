@@ -47,7 +47,7 @@ se.Search = {
         if(conference_list.length > 0) {
             keyword += " venue:" + conference_list[0] + ": ";
         }
-        $.getJSON("http://dblp.org/search/publ/api?format=jsonp&q=" + keyword + "&callback=?", function(res) {
+        $.getJSON("https://dblp.org/search/publ/api?format=jsonp&q=" + keyword + "&callback=?", function(res) {
             var output = [];
             res = res.result.hits.hit;
             for(var i in res) {
