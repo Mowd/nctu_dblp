@@ -86,6 +86,7 @@ se.Filter = {
             var keyword = $(this).val().toLowerCase();
             if($(this).val() == "") {
                 $(target).find("label").show();
+                $(target).find(".panel").show();
             }
             else {
                 $(target).find("label").each(function() {
@@ -94,6 +95,12 @@ se.Filter = {
                     }
                     else {
                         $(this).show();
+                    }
+                });
+                $(target).find(".panel").each(function() {
+                    var num = $(this).find("label:visible").length;
+                    if(num == 0) {
+                        $(this).hide();
                     }
                 });
             }
