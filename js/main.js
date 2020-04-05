@@ -37,6 +37,7 @@ se.Search = {
         $(".btn-search").on("click", function() {
             var keyword = $(".search-keyword").val();
             $(".search-result").html("");
+            $(".professor-label").attr("count", 0);
             $(".loading").show();
             se.result = [];
             se.search_count = 0;
@@ -61,10 +62,13 @@ se.Search = {
                 conference_list = [''];
             }
             terms = cartesian(conference_list, professor_list);
+            se.search_total = terms.length;
             for(var i in terms) {
                 se.Search.search(terms[i][0] + terms[i][1]);
                 se.search_count++;
             }
+            $(".loading-current").text(1);
+            $(".loading-total").text(se.search_total);
         });
         $(".search-keyword").on("keypress", function(e) {
             if(e.keyCode == 13) {
@@ -77,6 +81,7 @@ se.Search = {
             res = res.result.hits.hit;
             se.result = se.result.concat(res);
             se.search_count--;
+            $(".loading-current").text(se.search_total - se.search_count);
             if(se.search_count == 0) {
                 se.Search.render(se.result);
             }
@@ -94,7 +99,10 @@ se.Search = {
             });
             var author_li = [];
             for(var j in res[i]["info"]["authors"]["author"]) {
-                author_li.push(res[i]["info"]["authors"]["author"][j]["text"]);
+                var author = res[i]["info"]["authors"]["author"][j]["text"];
+                author_li.push(author);
+                var num = parseInt($(".professor-label[text='" + author.toLowerCase() + "']").attr("count")) + 1;
+                $(".professor-label[text='" + author.toLowerCase() + "']").attr("count", num);
             }
             output.push(
                 res[i]["info"]["year"] + "<br />",
@@ -105,6 +113,9 @@ se.Search = {
             );
         }
         $(".search-result").append(output.join("\n"));
+        $(".professor-label").each(function() {
+            $(this).find(".paper-count").text("(" + $(this).attr("count") + ")");
+        });
         $(".loading").hide();
     }
 
@@ -206,7 +217,7 @@ se.Filter = {
                 var li = [];
                 for(var i in data) {
                     li.push(
-                        '<div><label text="' + data[i].toLowerCase() + '"><input type="checkbox" class="chkbox-professor" value="' + data[i] + '" /> ' + data[i] + '</label></div>'
+                        '<div><label class="professor-label" text="' + data[i].toLowerCase() + '"><input type="checkbox" class="chkbox-professor" value="' + data[i] + '" /> ' + data[i] + ' <span class="paper-count"></span></label></div>'
                     );
                 }
                 var panel = [
