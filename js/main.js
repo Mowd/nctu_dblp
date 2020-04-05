@@ -26,13 +26,45 @@ function getWeekDate(dt) {
     return year + "-" + month + "-" + day + " (" + weekday + ")";
 };
 
+const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
+const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a);
+
 var se = {};
+se.result = [];
 
 se.Search = {
     setCallback: function() {
         $(".btn-search").on("click", function() {
             var keyword = $(".search-keyword").val();
-            se.Search.search(keyword);
+            $(".search-result").html("");
+            $(".loading").show();
+            se.result = [];
+            se.search_count = 0;
+            var professor_list = se.Filter.Professor.getSelected();
+            var conference_list = se.Filter.Conference.getSelected();
+            if(professor_list.length > 0) {
+                for(var i in professor_list) {
+                    keyword += " author:" + professor_list[i].replace(/ /g, '_') + ": ";
+                    professor_list[i] = " author:" + professor_list[i].replace(/ /g, '_') + ": ";
+                }
+            }
+            else {
+                professor_list = [''];
+            }
+            if(conference_list.length > 0) {
+                keyword += " venue:" + conference_list[0] + ": ";
+                for(var i in conference_list) {
+                    conference_list[i] = " venue:" + conference_list[i] + ": ";
+                }
+            }
+            else {
+                conference_list = [''];
+            }
+            terms = cartesian(conference_list, professor_list);
+            for(var i in terms) {
+                se.Search.search(terms[i][0] + terms[i][1]);
+                se.search_count++;
+            }
         });
         $(".search-keyword").on("keypress", function(e) {
             if(e.keyCode == 13) {
@@ -41,40 +73,41 @@ se.Search = {
         });
     },
     search: function(keyword) {
-        $(".loading").show();
-        var professor_list = se.Filter.Professor.getSelected();
-        var conference_list = se.Filter.Conference.getSelected();
-        if(professor_list.length > 0) {
-            for(var i in professor_list) {
-                keyword += " author:" + professor_list[i].replace(/ /g, '_') + ": ";
-            }
-        }
-        if(conference_list.length > 0) {
-            keyword += " venue:" + conference_list[0] + ": ";
-        }
-        $.getJSON("https://dblp.org/search/publ/api?h=1000&format=jsonp&q=" + keyword + "&callback=?", function(res) {
-            var output = [];
+        $.getJSON("https://dblp.org/search/publ/api?c=0&h=1000&format=jsonp&q=" + keyword + "&callback=?", function(res) {
             res = res.result.hits.hit;
-            for(var i in res) {
-                res = res.sort(function(a, b) {
-                    return a.info.year < b.info.year ? 1 : -1;
-                });
-                var author_li = [];
-                for(var j in res[i]["info"]["authors"]["author"]) {
-                    author_li.push(res[i]["info"]["authors"]["author"][j]["text"]);
-                }
-                output.push(
-                    res[i]["info"]["year"] + "<br />",
-                    '<span style="color: #999;">' + author_li.join(", ") + "</span><br />",
-                    '<b>' + res[i]["info"]["title"] + "</b> " + res[i]["info"]["venue"] + " " + res[i]["info"]["pages"],
-                    '<a href="' + res[i]["info"]["url"] + '" target="_blank">[VIEW]</a>',
-                    "<hr>"
-                );
+            se.result = se.result.concat(res);
+            se.search_count--;
+            if(se.search_count == 0) {
+                se.Search.render(se.result);
             }
-            $(".search-result").html(output.join("\n"));
-            $(".loading").hide();
         });
     },
+    render: function(res) {
+        res = res.filter(function(x) {
+            return x !== undefined;
+        });
+        res = res.filter((res, index, self) => self.findIndex(t => t["@id"] === res["@id"]) === index);
+        var output = [];
+        for(var i in res) {
+            res = res.sort(function(a, b) {
+                return a.info.year < b.info.year ? 1 : -1;
+            });
+            var author_li = [];
+            for(var j in res[i]["info"]["authors"]["author"]) {
+                author_li.push(res[i]["info"]["authors"]["author"][j]["text"]);
+            }
+            output.push(
+                res[i]["info"]["year"] + "<br />",
+                '<span style="color: #999;">' + author_li.join(", ") + "</span><br />",
+                '<b>' + res[i]["info"]["title"] + "</b> " + res[i]["info"]["venue"] + " " + res[i]["info"]["pages"],
+                '<a href="' + res[i]["info"]["url"] + '" target="_blank">[VIEW]</a>',
+                "<hr>"
+            );
+        }
+        $(".search-result").append(output.join("\n"));
+        $(".loading").hide();
+    }
+
 };
 
 se.Filter = {
