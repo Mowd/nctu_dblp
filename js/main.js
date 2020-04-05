@@ -56,6 +56,9 @@ se.Search = {
             var output = [];
             res = res.result.hits.hit;
             for(var i in res) {
+                res = res.sort(function(a, b) {
+                    return a.info.year < b.info.year ? 1 : -1;
+                });
                 var author_li = [];
                 for(var j in res[i]["info"]["authors"]["author"]) {
                     author_li.push(res[i]["info"]["authors"]["author"][j]["text"]);
