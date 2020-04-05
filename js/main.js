@@ -79,6 +79,23 @@ se.Filter = {
         se.Filter.Conference.render();
         se.Filter.Professor.render();
         se.Filter.searchCallback();
+        $("body").delegate(".panel-chkbox", "click", function () {
+            if($(this).prop("checked")) {
+                $(this).closest(".panel").find(".panel-body [type=checkbox]").prop("checked", true);
+            }
+            else {
+                $(this).closest(".panel").find(".panel-body [type=checkbox]").prop("checked", false);
+            }
+        });
+        $(".level-chkbox").on("click", function() {
+            var level = $(this).attr("value");
+            if($(this).prop("checked")) {
+                $(".chkbox-conference[level=" + level + "]").prop("checked", true);
+            }
+            else {
+                $(".chkbox-conference[level=" + level + "]").prop("checked", false);
+            }
+        });
     },
     searchCallback: function() {
         $(".filter-search").on("keyup", function(e) {
@@ -115,17 +132,18 @@ se.Filter = {
                     for(var j in data[i]) {
                         var short = data[i][j]["short"];
                         var full = data[i][j]["full"];
+                        var level = data[i][j]["level"];
                         if(short == "") {
                             short = full.substr(0, 7) + "...";
                         }
                         li.push(
-                            '<div><label text="' + short.toLowerCase() + '"><input type="checkbox" class="chkbox-conference" value="' + short + '" /> <span title="' + full +' ">' + short + '</span></label></div>'
+                            '<div><label text="' + short.toLowerCase() + '"><input type="checkbox" class="chkbox-conference" value="' + short + '" level="' + level + '" /> <span title="' + full +' ">' + short + '</span></label></div>'
                         );
                     }
                     var panel = [
                         '<div class="panel panel-default">',
                         '    <div class="panel-heading">',
-                        '        <h3 class="panel-title">' + i + '</h3>',
+                        '        <h3 class="panel-title"><input type="checkbox" class="panel-chkbox"> ' + i + '</h3>',
                         '    </div>',
                         '    <div class="panel-body">' + li.join("\n") + '</div>',
                         '</div>'
@@ -158,7 +176,7 @@ se.Filter = {
                 var panel = [
                     '<div class="panel panel-default">',
                     '    <div class="panel-heading">',
-                    '        <h3 class="panel-title">NCTU</h3>',
+                    '        <h3 class="panel-title"><input type="checkbox" class="panel-chkbox"> NCTU</h3>',
                     '    </div>',
                     '    <div class="panel-body">' + li.join("\n") + '</div>',
                     '</div>'
