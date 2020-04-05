@@ -46,13 +46,13 @@ se.Search = {
         var conference_list = se.Filter.Conference.getSelected();
         if(professor_list.length > 0) {
             for(var i in professor_list) {
-                keyword += " author:" + professor_list[i].replace(/-/g, ' ') + ": ";
+                keyword += " author:" + professor_list[i].replace(/ /g, '_') + ": ";
             }
         }
         if(conference_list.length > 0) {
             keyword += " venue:" + conference_list[0] + ": ";
         }
-        $.getJSON("https://dblp.org/search/publ/api?format=jsonp&q=" + keyword + "&callback=?", function(res) {
+        $.getJSON("https://dblp.org/search/publ/api?h=1000&format=jsonp&q=" + keyword + "&callback=?", function(res) {
             var output = [];
             res = res.result.hits.hit;
             for(var i in res) {
