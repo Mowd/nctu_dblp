@@ -21,12 +21,14 @@
     <title>NCTU dblp</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css?2020020702" rel="stylesheet">
+    <link href="css/main.css?ts=2020040601" rel="stylesheet">
 
   </head>
   <body>
     <div class="loading">
-        <img src="loading.gif" width="40" align="top" style="margin-left: 15px;"><br />Loading...
+      <img src="loading.gif" width="40" align="top" style="margin-left: 15px;"><br />
+      Loading...<br />
+      (<span class="loading-current"></span>/<span class="loading-total"></span>)
     </div>
     <script>
         var left = $(window).width() / 2 - $(".loading").width() / 2;
@@ -137,7 +139,7 @@
       </div>
     </div>
   </body>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?ts=2020040601"></script>
   <script>
     $(function() {
       se.Search.setCallback();
