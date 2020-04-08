@@ -98,12 +98,24 @@ se.Search = {
                 return a.info.year < b.info.year ? 1 : -1;
             });
             var author_li = [];
-            for(var j in res[i]["info"]["authors"]["author"]) {
-                var author = res[i]["info"]["authors"]["author"][j]["text"];
+            if(!("authors" in res[i]["info"])) {
+                continue;
+            }
+            if(!Array.isArray(res[i]["info"]["authors"]["author"])) {
+                var author = res[i]["info"]["authors"]["author"]["text"];
                 author_li.push(author);
                 var num = parseInt($(".professor-label[text='" + author.toLowerCase() + "']").attr("count")) + 1;
                 $(".professor-label[text='" + author.toLowerCase() + "']").attr("count", num);
             }
+            else {
+                for(var j in res[i]["info"]["authors"]["author"]) {
+                    var author = res[i]["info"]["authors"]["author"][j]["text"];
+                    author_li.push(author);
+                    var num = parseInt($(".professor-label[text='" + author.toLowerCase() + "']").attr("count")) + 1;
+                    $(".professor-label[text='" + author.toLowerCase() + "']").attr("count", num);
+                }
+            }
+
             output.push(
                 res[i]["info"]["year"] + "<br />",
                 '<span style="color: #999;">' + author_li.join(", ") + "</span><br />",
