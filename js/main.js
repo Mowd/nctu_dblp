@@ -92,6 +92,7 @@ se.Search = {
             url: "https://mowd.tw/dblp/",
             type: "POST",
             data: {
+                keyword: $.trim($(".search-keyword").val()),
                 venue: se.Filter.Conference.getSelected(),
                 professor: se.Filter.Professor.getSelected()
             },
