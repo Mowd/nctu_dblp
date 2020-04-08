@@ -26,6 +26,10 @@ function getWeekDate(dt) {
     return year + "-" + month + "-" + day + " (" + weekday + ")";
 };
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
 const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a);
 
@@ -41,34 +45,35 @@ se.Search = {
             $(".loading").show();
             se.result = [];
             se.search_count = 0;
-            var professor_list = se.Filter.Professor.getSelected();
-            var conference_list = se.Filter.Conference.getSelected();
-            if(professor_list.length > 0) {
-                for(var i in professor_list) {
-                    keyword += " author:" + professor_list[i].replace(/ /g, '_') + ": ";
-                    professor_list[i] = " author:" + professor_list[i].replace(/ /g, '_') + ": ";
-                }
-            }
-            else {
-                professor_list = [''];
-            }
-            if(conference_list.length > 0) {
-                keyword += " venue:" + conference_list[0] + ": ";
-                for(var i in conference_list) {
-                    conference_list[i] = " venue:" + conference_list[i] + ": ";
-                }
-            }
-            else {
-                conference_list = [''];
-            }
-            terms = cartesian(conference_list, professor_list);
-            se.search_total = terms.length;
-            for(var i in terms) {
-                se.Search.search(terms[i][0] + terms[i][1]);
-                se.search_count++;
-            }
-            $(".loading-current").text(1);
-            $(".loading-total").text(se.search_total);
+            se.Search.search();
+            // var professor_list = se.Filter.Professor.getSelected();
+            // var conference_list = se.Filter.Conference.getSelected();
+            // if(professor_list.length > 0) {
+            //     for(var i in professor_list) {
+            //         keyword += " author:" + professor_list[i].replace(/ /g, '_') + ": ";
+            //         professor_list[i] = " author:" + professor_list[i].replace(/ /g, '_') + ": ";
+            //     }
+            // }
+            // else {
+            //     professor_list = [''];
+            // }
+            // if(conference_list.length > 0) {
+            //     keyword += " venue:" + conference_list[0] + ": ";
+            //     for(var i in conference_list) {
+            //         conference_list[i] = " venue:" + conference_list[i] + ": ";
+            //     }
+            // }
+            // else {
+            //     conference_list = [''];
+            // }
+            // terms = cartesian(conference_list, professor_list);
+            // se.search_total = terms.length;
+            // for(var i in terms) {
+            //     se.Search.search(terms[i][0] + terms[i][1]);
+            //     se.search_count++;
+            // }
+            // $(".loading-current").text(1);
+            // $(".loading-total").text(se.search_total);
         });
         $(".search-keyword").on("keypress", function(e) {
             if(e.keyCode == 13) {
@@ -76,18 +81,30 @@ se.Search = {
             }
         });
     },
-    search: function(keyword) {
-        $.getJSON("https://dblp.org/search/publ/api?c=0&h=1000&format=jsonp&q=" + keyword + "&callback=?", function(res) {
+    search: function() {
+        //$.getJSON("https://dblp.org/search/publ/api?c=0&h=1000&format=jsonp&q=" + keyword + "&callback=?", function(res) {
+        $.ajax({
+            url: "https://mowd.tw/dblp/",
+            type: "POST",
+            data: {
+                venue: se.Filter.Conference.getSelected(),
+                professor: se.Filter.Professor.getSelected()
+            },
+            crossDomain: true,
+            dataType: "json"
+        }).done(function(res) {
             res = res.result.hits.hit;
-            se.result = se.result.concat(res);
-            se.search_count--;
-            $(".loading-current").text(se.search_total - se.search_count);
-            if(se.search_count == 0) {
-                se.Search.render(se.result);
-            }
+            se.Search.render(res);
+            // se.result = se.result.concat(res);
+            // se.search_count--;
+            // $(".loading-current").text(se.search_total - se.search_count);
+            // if(se.search_count == 0) {
+            //     se.Search.render(se.result);
+            // }
         });
     },
     render: function(res) {
+        $(".result-count").show().text("About " + numberWithCommas(res.length) + " results.");
         res = res.filter(function(x) {
             return x !== undefined;
         });
