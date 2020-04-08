@@ -31,7 +31,7 @@ function numberWithCommas(x) {
 }
 
 function getSecond() {
-    return parseFloat(new Date().getTime() + "." + new Date().getMilliseconds());
+    return new Date().getTime() / 1000;
 }
 
 const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
