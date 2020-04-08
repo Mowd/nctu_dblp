@@ -30,6 +30,10 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function getSecond() {
+    return parseFloat(new Date().getTime() + "." + new Date().getMilliseconds());
+}
+
 const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
 const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a);
 
@@ -43,6 +47,7 @@ se.Search = {
             $(".search-result").html("");
             $(".professor-label").attr("count", 0);
             $(".loading").show();
+            se.second = getSecond();
             se.result = [];
             se.search_count = 0;
             se.Search.search();
@@ -104,7 +109,6 @@ se.Search = {
         });
     },
     render: function(res) {
-        $(".result-count").show().text("About " + numberWithCommas(res.length) + " results.");
         res = res.filter(function(x) {
             return x !== undefined;
         });
@@ -146,6 +150,8 @@ se.Search = {
             $(this).find(".paper-count").text("(" + $(this).attr("count") + ")");
         });
         $(".loading").hide();
+        var total_second = Math.round((getSecond() - se.second) * 100) / 100;
+        $(".result-count").show().text("About " + numberWithCommas(res.length) + " results. (" + total_second.toString() + " seconds)");
     }
 
 };
