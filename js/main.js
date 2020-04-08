@@ -188,7 +188,7 @@ se.Filter = {
                 $(target).find(".panel").show();
             }
             else {
-                $(target).find("label").each(function() {
+                $(target).find("label[text]").each(function() {
                     if($(this).attr("text").indexOf(keyword) == -1) {
                         $(this).hide();
                     }
@@ -197,7 +197,7 @@ se.Filter = {
                     }
                 });
                 $(target).find(".panel").each(function() {
-                    var num = $(this).find("label:visible").length;
+                    var num = $(this).find("label[text]:visible").length;
                     if(num == 0) {
                         $(this).hide();
                     }
