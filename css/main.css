@@ -33,3 +33,7 @@ sup {
     background: #ccc;
     opacity: 0.9;
 }
+.result-count {
+    text-align: right;
+    display: none;
+}
