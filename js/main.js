@@ -201,7 +201,7 @@ se.Filter = {
     },
     Conference: {
         render: function() {
-            $.getJSON("conference.json", function(data) {
+            $.getJSON("conference.json?ts=2020040801", function(data) {
                 var html = [];
                 for(var i in data) {
                     var li = [];
@@ -241,7 +241,7 @@ se.Filter = {
     },
     Professor: {
         render: function() {
-            $.getJSON("professor.json", function(data) {
+            $.getJSON("professor.json?ts=2020040801", function(data) {
                 var html = [];
                 var li = [];
                 for(var i in data) {
