@@ -225,7 +225,7 @@ se.Filter = {
                     var panel = [
                         '<div class="panel panel-default">',
                         '    <div class="panel-heading">',
-                        '        <h3 class="panel-title"><input type="checkbox" class="panel-chkbox"> ' + i + '</h3>',
+                        '        <h3 class="panel-title"><label><input type="checkbox" class="panel-chkbox"> ' + i + '</label></h3>',
                         '    </div>',
                         '    <div class="panel-body">' + li.join("\n") + '</div>',
                         '</div>'
@@ -258,7 +258,7 @@ se.Filter = {
                 var panel = [
                     '<div class="panel panel-default">',
                     '    <div class="panel-heading">',
-                    '        <h3 class="panel-title"><input type="checkbox" class="panel-chkbox"> NCTU</h3>',
+                    '        <h3 class="panel-title"><label><input type="checkbox" class="panel-chkbox"> NCTU</label></h3>',
                     '    </div>',
                     '    <div class="panel-body">' + li.join("\n") + '</div>',
                     '</div>'
