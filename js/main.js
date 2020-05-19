@@ -99,8 +99,9 @@ se.Search = {
             crossDomain: true,
             dataType: "json"
         }).done(function(res) {
+            var stat = res.stat;
             res = res.result.hits.hit;
-            se.Search.render(res);
+            se.Search.render(res, stat);
             // se.result = se.result.concat(res);
             // se.search_count--;
             // $(".loading-current").text(se.search_total - se.search_count);
@@ -109,7 +110,7 @@ se.Search = {
             // }
         });
     },
-    render: function(res) {
+    render: function(res, stat) {
         res = res.filter(function(x) {
             return x !== undefined;
         });
@@ -153,6 +154,19 @@ se.Search = {
         $(".loading").hide();
         var total_second = Math.round((getSecond() - se.second) * 100) / 100;
         $(".result-count").show().text("About " + numberWithCommas(res.length) + " results. (" + total_second.toString() + " seconds)");
+
+        //statistics
+        var venue_stat = [];
+        for(var v in stat.venue) {
+            venue_stat.push(v + ": " + stat.venue[v]);
+        }
+        $(".venue-stat").html(venue_stat.join("<br>\n"));
+
+        var author_stat = [];
+        for(var a in stat.author) {
+            author_stat.push(a + ": " + stat.author[a]);
+        }
+        $(".author-stat").html(author_stat.join("<br>\n"));
     }
 
 };
