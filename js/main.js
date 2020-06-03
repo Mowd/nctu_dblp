@@ -94,7 +94,9 @@ se.Search = {
             data: {
                 keyword: $.trim($(".search-keyword").val()),
                 venue: se.Filter.Conference.getSelected(),
-                professor: se.Filter.Professor.getSelected()
+                professor: se.Filter.Professor.getSelected(),
+                year_start: $("[name=year_start]").val(),
+                year_end: $("[name=year_end]").val()
             },
             crossDomain: true,
             dataType: "json"
@@ -161,6 +163,12 @@ se.Search = {
             venue_stat.push(v + ": " + stat.venue[v]);
         }
         $(".venue-stat").html(venue_stat.join("<br>\n"));
+
+        var year_stat = [];
+        for(var v in stat.year) {
+            year_stat.push(v + ": " + stat.year[v]);
+        }
+        $(".year-stat").html(year_stat.join("<br>\n"));
 
         var author_stat = [];
         for(var a in stat.author) {
