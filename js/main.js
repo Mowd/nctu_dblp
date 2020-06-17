@@ -159,15 +159,24 @@ se.Search = {
 
         //statistics
         var venue_stat = [];
+        var table_html = [
+            '<table class="table table-hover table-bordered">'
+        ];
+
         for(var v in stat.venue) {
             venue_stat.push(v + ": " + stat.venue[v]);
         }
         $(".venue-stat").html(venue_stat.join("<br>\n"));
 
         var year_stat = [];
+        var year_dict = {};
+        table_html.push("<tr><th></th>");
         for(var v in stat.year) {
             year_stat.push(v + ": " + stat.year[v]);
+            year_dict[v] = 0;
+            table_html.push('<th>' + v + '</th>');
         }
+        table_html.push("</tr>");
         $(".year-stat").html(year_stat.join("<br>\n"));
 
         var author_stat = [];
@@ -175,6 +184,29 @@ se.Search = {
             author_stat.push(a + ": " + stat.author[a]);
         }
         $(".author-stat").html(author_stat.join("<br>\n"));
+
+        var table_json = {};
+        for(var i in res) {
+            var year = res[i]["info"]["year"];
+            var area = res[i]["info"]["area"];
+            if(!(area in table_json)) {
+                table_json[area] = Object.assign({}, year_dict);
+            }
+            table_json[area][year] += 1;
+        }
+        for(var i in table_json) {
+            table_html.push("<tr><td>" + i + "</td>");
+            for(var j in table_json[i]) {
+                table_html = table_html.concat([
+                    "<td>",
+                    table_json[i][j],
+                    "</td>"
+                ]);
+            }
+            table_html.push("</tr>");
+        }
+        table_html.push("</table>");
+        $(".stat-table").html(table_html.join("\n"));
     }
 
 };
